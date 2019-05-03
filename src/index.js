@@ -1,12 +1,44 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './components/App'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import '@shopify/polaris/styles.css';
+import './index.css'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+/**
+ * Helper function to get state object given current hash.
+ *
+ * @returns {Object} State.
+ */
+function hashToState() {
+	const hash = window.location.hash.length > 0
+		? window.location.hash.substring( 1 )
+		: '';
+
+	let [ dataType, id ] = hash.split( ':' )
+	if ( dataType !== 'pilpres' && dataType !== 'pileg' ) {
+		dataType = 'pilpres';
+	}
+
+	id = parseInt( id, 10 );
+	if ( isNaN( id ) ) {
+		id = 0;
+	}
+
+	return {
+		dataType,
+		id
+	}
+}
+
+const { dataType, id } = hashToState()
+window.history.replaceState(
+	{},
+	document.title,
+	`${ window.location.pathname }#${ dataType }:${ id }`
+);
+
+ReactDOM.render(
+	<App hashToState={ hashToState } dataType={ dataType } id={ id } />,
+	document.getElementById( 'root' )
+)

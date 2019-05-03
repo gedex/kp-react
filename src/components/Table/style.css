@@ -1,0 +1,31 @@
+.Polaris-DataTable__Table thead th {
+	font-weight: 700;
+}
+
+.Polaris-DataTable__Table .Polaris-DataTable__TableRow:first-child th,
+.Polaris-DataTable__Table .Polaris-DataTable__TableRow:first-child td {
+	background-color: #f9fafb;
+}
+
+.Polaris-DataTable__Table .numeric {
+	color: #454F5B;
+}
+
+.Polaris-DataTable__Table .numeric.winner {
+	color: #108043;
+}
+
+.table-control .Polaris-Button {
+	opacity: 1;
+	color: #212b36;
+}
+
+.location-name {
+	text-align: center;
+}
+
+.location-link .Polaris-Button {
+	align-items: left;
+	justify-content: left;
+	text-align: left;
+}
