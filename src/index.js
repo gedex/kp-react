@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import App from './components/App'
 
 import '@shopify/polaris/styles.css';
-import './index.css'
 
 /**
  * Helper function to get state object given current hash.

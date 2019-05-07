@@ -9,7 +9,6 @@ import {
 	Page,
 } from '@shopify/polaris'
 import Table from '../Table'
-import './style.css'
 
 const apiUrl = 'https://kawal-c1.appspot.com/api/c/'
 
