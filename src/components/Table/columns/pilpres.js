@@ -51,10 +51,10 @@ export default function getPilpresColumns( total ) {
 					</div>
 				</Tooltip>
 			),
-			accessor: 'pas1Percentage',
+			accessor: accessor,
 			Cell: row => (
 				<CellPercentage
-					percentage={ row.value }
+					percentage={ row.original[ `${ accessor }Percentage` ] }
 					caption={ row.original[ accessor ] ? formatNumber( row.original[ accessor ] ) : false }
 					winner={ row.original[ `${ accessor }Win` ] }
 				/>
