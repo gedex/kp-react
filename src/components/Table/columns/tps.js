@@ -7,8 +7,7 @@ import {
 } from '@shopify/polaris'
 
 import CellPercentage from '../cells/percentage'
-import CellNumber from '../cells/percentage'
-import { partyKeys, rankParties, formatNumber } from '../utils'
+import { formatNumber } from '../utils'
 
 export default function getTpsColumns( dataType, total ) {
 	// TODO: remove dupes between here and pilpres.js

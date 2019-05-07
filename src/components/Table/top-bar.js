@@ -107,7 +107,7 @@ export default class TopBar extends Component {
 
 	render() {
 		const { loading, name } = this.props
-		const searchPopover = this.getSearchPopover()
+		//const searchPopover = this.getSearchPopover()
 		const parentsPopover = this.getParentsPopover()
 
 		return loading ?
