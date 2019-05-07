@@ -32,15 +32,16 @@ const Wrapper = props => {
 class App extends Component {
 	constructor( props ) {
 		super( props )
-		console.log( 'app contructor' )
 
 		this.state = {
 			dataType: this.props.dataType || 'pilpres',
 			id: this.props.id || 0,
-			data: null,
+			apiResponse: null,
 			loading: true,
 			error: false,
 		}
+
+		this.onHashChange = this.onHashChange.bind( this )
 	}
 
 	onHashChange() {
@@ -51,26 +52,25 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		window.addEventListener( 'hashchange', this.onHashChange.bind( this ), false )
+		window.addEventListener( 'hashchange', this.onHashChange, false )
 		this.fetchData()
 	}
 
 	componentWillUnmount() {
-		window.removeListener( 'hashchange', this.onHashChange.bind( this ), false )
+		window.removeEventListener( 'hashchange', this.onHashChange, false )
 	}
 
 	fetchData() {
 		this.setState( { loading: true } )
 
-		fetch( apiUrl + this.state.id  )
+		fetch( apiUrl + this.state.id + `?=${ new Date().getTime() }` )
 			.then( response => response.json() )
-			.then( data => this.setState( { data, loading: false } ) )
+			.then( apiResponse => this.setState( { apiResponse, loading: false } ) )
 			.catch( error => this.setState( { error, loading: false } ) )
 	}
 
 	render() {
-		const { dataType, id, loading, data } = this.state
-		console.log( 'app render', dataType, id )
+		const { dataType, id, loading, apiResponse } = this.state
 
 		return (
 			<Wrapper>
@@ -95,7 +95,7 @@ class App extends Component {
 
 				<Table
 					loading={ loading }
-					data={ data }
+					apiResponse={ apiResponse }
 					dataType={ dataType }
 				/>
 			</Wrapper>

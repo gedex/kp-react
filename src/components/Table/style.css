@@ -1,31 +1,82 @@
-.Polaris-DataTable__Table thead th {
-	font-weight: 700;
+.Polaris-ActionList--active {
+	box-shadow: inset 0.2rem 0 0 #5c6ac4
 }
 
-.Polaris-DataTable__Table .Polaris-DataTable__TableRow:first-child th,
-.Polaris-DataTable__Table .Polaris-DataTable__TableRow:first-child td {
-	background-color: #f9fafb;
+.numeric {
+	text-align: right
 }
 
-.Polaris-DataTable__Table .numeric {
-	color: #454F5B;
+.th-col .Polaris-Heading {
+	margin-bottom: 10px;
 }
 
-.Polaris-DataTable__Table .numeric.winner {
-	color: #108043;
+.ReactTable .rt-tr .rt-th {
+	text-align: left
 }
 
-.table-control .Polaris-Button {
-	opacity: 1;
-	color: #212b36;
+.ReactTable .rt-tr .rt-th .Polaris-Heading {
+	text-transform: uppercase;
 }
 
-.location-name {
-	text-align: center;
+.ReactTable .rt-tr .rt-th,
+.ReactTable .rt-tr .rt-td {
+	padding: 10px;
 }
 
-.location-link .Polaris-Button {
+.ReactTable .rt-tr .rt-td:first-child  {
+	white-space: normal;
+}
+
+.tps-name .Polaris-Button {
 	align-items: left;
 	justify-content: left;
 	text-align: left;
+}
+
+.ReactTable .winner {
+	color: #108043;
+}
+
+.tps-cards {
+	display: flex;
+	overflow-x: auto;
+	list-style: none;
+	padding: 0;
+}
+
+.tps-card {
+	border: 1px solid #dfe3e8;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+	margin-left: 10px;
+	margin-bottom: 25px;
+	padding: 10px;
+	min-width: 142px;
+}
+
+.tps-card .Polaris-Thumbnail--sizeLarge {
+	width: 100%;
+}
+
+.tps-cards .tps-card:first-child {
+	margin-left: 0;
+}
+
+.tps-detail-table {
+	border-spacing: 0;
+	margin-top: 10px;
+}
+
+.tps-detail-table td {
+	border-bottom: 1px solid #dfe3e8;
+	font-size: 1.2rem;
+	padding: 4px 6px;
+	vertical-align: top;
+}
+
+.tps-detail-table td:first-child {
+	padding-left: 0;
+}
+
+.tps-detail-table tr:last-child td {
+	border-bottom: none;
 }
