@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/kp-react/static/css/main.38a19693.chunk.css",
-    "main.js": "/kp-react/static/js/main.d633b7da.chunk.js",
-    "main.js.map": "/kp-react/static/js/main.d633b7da.chunk.js.map",
+    "main.js": "/kp-react/static/js/main.79ef5f75.chunk.js",
+    "main.js.map": "/kp-react/static/js/main.79ef5f75.chunk.js.map",
     "runtime~main.js": "/kp-react/static/js/runtime~main.1e6c48c7.js",
     "runtime~main.js.map": "/kp-react/static/js/runtime~main.1e6c48c7.js.map",
     "static/css/2.5bc10812.chunk.css": "/kp-react/static/css/2.5bc10812.chunk.css",
     "static/js/2.b8da9e88.chunk.js": "/kp-react/static/js/2.b8da9e88.chunk.js",
     "static/js/2.b8da9e88.chunk.js.map": "/kp-react/static/js/2.b8da9e88.chunk.js.map",
     "index.html": "/kp-react/index.html",
-    "precache-manifest.a8386abcd12f10d78621339162ef862d.js": "/kp-react/precache-manifest.a8386abcd12f10d78621339162ef862d.js",
+    "precache-manifest.02063d0b309dd48a8b6f5d05e6a1481f.js": "/kp-react/precache-manifest.02063d0b309dd48a8b6f5d05e6a1481f.js",
     "service-worker.js": "/kp-react/service-worker.js",
     "static/css/2.5bc10812.chunk.css.map": "/kp-react/static/css/2.5bc10812.chunk.css.map",
     "static/css/main.38a19693.chunk.css.map": "/kp-react/static/css/main.38a19693.chunk.css.map"
