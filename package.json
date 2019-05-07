@@ -1,6 +1,7 @@
 {
   "name": "kp-react",
   "version": "0.1.0",
+  "homepage" : "http://gedex.github.io/kp-react",
   "private": true,
   "dependencies": {
     "@shopify/polaris": "^3.13.0",
