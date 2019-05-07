@@ -59,7 +59,6 @@ export default function getPilpresColumns( total ) {
 					winner={ row.original[ `${ accessor }Win` ] }
 				/>
 			),
-			minWidth: 127,
 		}
 	) )
 
@@ -87,7 +86,6 @@ export default function getPilpresColumns( total ) {
 					</Link>
 				</div>
 			),
-			minWidth: 220,
 		},
 
 		...candidateCells,
@@ -125,179 +123,178 @@ export default function getPilpresColumns( total ) {
 					progress={ row.value }
 				/>
 			),
-			minWidth: 150,
 		},
 
-		{
-			Header: () => (
-				<Tooltip content={ 'Jumlah suara sah' }>
-					<div className={ thColNumericClass }>
-						<Heading>{ 'Sah' }</Heading>
-						<CellNumber number={ total.sah } />
-					</div>
-				</Tooltip>
-			),
-			Footer: () => (
-				<Tooltip content={ 'Jumlah suara sah' }>
-					<div className={ thColNumericClass }>
-						<Heading>{ 'Sah' }</Heading>
-						<CellNumber number={ total.sah } />
-					</div>
-				</Tooltip>
-			),
-			accessor: 'sah',
-			Cell: row => (
-				<CellNumber number={ formatNumber( row.value ) } />
-			),
-			minWidth: 160,
-		},
+		//{
+			//Header: () => (
+				//<Tooltip content={ 'Jumlah suara sah' }>
+					//<div className={ thColNumericClass }>
+						//<Heading>{ 'Sah' }</Heading>
+						//<CellNumber number={ total.sah } />
+					//</div>
+				//</Tooltip>
+			//),
+			//Footer: () => (
+				//<Tooltip content={ 'Jumlah suara sah' }>
+					//<div className={ thColNumericClass }>
+						//<Heading>{ 'Sah' }</Heading>
+						//<CellNumber number={ total.sah } />
+					//</div>
+				//</Tooltip>
+			//),
+			//accessor: 'sah',
+			//Cell: row => (
+				//<CellNumber number={ formatNumber( row.value ) } />
+			//),
+			//minWidth: 160,
+		//},
 
-		{
-			Header: () => (
-				<Tooltip content={ 'Jumlah suara tidak sah' }>
-					<div className={ thColNumericClass }>
-						<Heading>{ 'Tidak Sah' }</Heading>
-						<CellNumber number={ total.tSah } />
-					</div>
-				</Tooltip>
-			),
-			Footer: () => (
-				<Tooltip content={ 'Jumlah suara tidak sah' }>
-					<div className={ thColNumericClass }>
-						<Heading>{ 'Tidak Sah' }</Heading>
-						<CellNumber number={ total.tSah } />
-					</div>
-				</Tooltip>
-			),
-			accessor: 'tSah',
-			Cell: row => (
-				<CellNumber number={ formatNumber( row.value ) } />
-			),
-			minWidth: 160,
-		},
+		//{
+			//Header: () => (
+				//<Tooltip content={ 'Jumlah suara tidak sah' }>
+					//<div className={ thColNumericClass }>
+						//<Heading>{ 'Tidak Sah' }</Heading>
+						//<CellNumber number={ total.tSah } />
+					//</div>
+				//</Tooltip>
+			//),
+			//Footer: () => (
+				//<Tooltip content={ 'Jumlah suara tidak sah' }>
+					//<div className={ thColNumericClass }>
+						//<Heading>{ 'Tidak Sah' }</Heading>
+						//<CellNumber number={ total.tSah } />
+					//</div>
+				//</Tooltip>
+			//),
+			//accessor: 'tSah',
+			//Cell: row => (
+				//<CellNumber number={ formatNumber( row.value ) } />
+			//),
+			//minWidth: 160,
+		//},
 
-		{
-			Header: () => (
-				<Tooltip content={ 'Jumlah TPS total dari data KPU' }>
-					<div className={ thColNumericClass }>
-						<Heading>{ 'Total KPU' }</Heading>
-						<CellNumber number={ total.totalKpu } />
-					</div>
-				</Tooltip>
-			),
-			Footer: () => (
-				<Tooltip content={ 'Jumlah TPS total dari data KPU' }>
-					<div className={ thColNumericClass }>
-						<Heading>{ 'Total KPU' }</Heading>
-						<CellNumber number={ total.totalKpu } />
-					</div>
-				</Tooltip>
-			),
-			accessor: 'totalKpu',
-			Cell: row => (
-				<CellNumber number={ formatNumber( row.value ) } />
-			),
-			minWidth: 160,
-		},
+		//{
+			//Header: () => (
+				//<Tooltip content={ 'Jumlah TPS total dari data KPU' }>
+					//<div className={ thColNumericClass }>
+						//<Heading>{ 'Total KPU' }</Heading>
+						//<CellNumber number={ total.totalKpu } />
+					//</div>
+				//</Tooltip>
+			//),
+			//Footer: () => (
+				//<Tooltip content={ 'Jumlah TPS total dari data KPU' }>
+					//<div className={ thColNumericClass }>
+						//<Heading>{ 'Total KPU' }</Heading>
+						//<CellNumber number={ total.totalKpu } />
+					//</div>
+				//</Tooltip>
+			//),
+			//accessor: 'totalKpu',
+			//Cell: row => (
+				//<CellNumber number={ formatNumber( row.value ) } />
+			//),
+			//minWidth: 160,
+		//},
 
-		{
-			Header: () => (
-				<Tooltip content={ 'Jumlah TPS dengan foto yang diterima KawalPemilu (termasuk lembar PHP, pileg, dpd, dll)' }>
-					<div className={ thColNumericClass }>
-						<Heading>{ 'Dgn Foto' }</Heading>
-						<CellPercentage
-							percentage={ total.cakupanPercentage }
-							caption={ `${ formatNumber( total.cakupan ) } / ${ formatNumber( total.totalKpu ) }` }
-						/>
-					</div>
-				</Tooltip>
-			),
-			Footer: () => (
-				<Tooltip content={ 'Jumlah TPS dengan foto yang diterima KawalPemilu (termasuk lembar PHP, pileg, dpd, dll)' }>
-					<div className={ thColNumericClass }>
-						<Heading>{ 'Dgn Foto' }</Heading>
-						<CellPercentage
-							percentage={ total.cakupanPercentage }
-							caption={ `${ formatNumber( total.cakupan ) } / ${ formatNumber( total.totalKpu ) }` }
-						/>
-					</div>
-				</Tooltip>
-			),
-			accessor: 'cakupanPercentage',
-			Cell: row => (
-				<CellPercentage
-					percentage={ row.value }
-					caption={ `${ formatNumber( row.original.cakupan ) } / ${ formatNumber( row.original.totalKpu ) }` }
-					progress={ row.value }
-				/>
-			),
-			minWidth: 150,
-		},
+		//{
+			//Header: () => (
+				//<Tooltip content={ 'Jumlah TPS dengan foto yang diterima KawalPemilu (termasuk lembar PHP, pileg, dpd, dll)' }>
+					//<div className={ thColNumericClass }>
+						//<Heading>{ 'Dgn Foto' }</Heading>
+						//<CellPercentage
+							//percentage={ total.cakupanPercentage }
+							//caption={ `${ formatNumber( total.cakupan ) } / ${ formatNumber( total.totalKpu ) }` }
+						///>
+					//</div>
+				//</Tooltip>
+			//),
+			//Footer: () => (
+				//<Tooltip content={ 'Jumlah TPS dengan foto yang diterima KawalPemilu (termasuk lembar PHP, pileg, dpd, dll)' }>
+					//<div className={ thColNumericClass }>
+						//<Heading>{ 'Dgn Foto' }</Heading>
+						//<CellPercentage
+							//percentage={ total.cakupanPercentage }
+							//caption={ `${ formatNumber( total.cakupan ) } / ${ formatNumber( total.totalKpu ) }` }
+						///>
+					//</div>
+				//</Tooltip>
+			//),
+			//accessor: 'cakupanPercentage',
+			//Cell: row => (
+				//<CellPercentage
+					//percentage={ row.value }
+					//caption={ `${ formatNumber( row.original.cakupan ) } / ${ formatNumber( row.original.totalKpu ) }` }
+					//progress={ row.value }
+				///>
+			//),
+			//minWidth: 150,
+		//},
 
-		{
-			Header: () => (
-				<Tooltip content={ 'Jumlah TPS yang memiliki foto yang belum diproses' }>
-					<div className={ thColNumericClass }>
-						<Heading>{ 'Belum Terproses' }</Heading>
-						<CellPercentage
-							percentage={ total.pendingPercentage }
-							caption={ `${ formatNumber( total.pending ) } / ${ formatNumber( total.cakupan ) }` }
-						/>
-					</div>
-				</Tooltip>
-			),
-			Footer: () => (
-				<Tooltip content={ 'Jumlah TPS yang memiliki foto yang belum diproses' }>
-					<div className={ thColNumericClass }>
-						<Heading>{ 'Belum Terproses' }</Heading>
-						<CellPercentage
-							percentage={ total.pendingPercentage }
-							caption={ `${ formatNumber( total.pending ) } / ${ formatNumber( total.cakupan ) }` }
-						/>
-					</div>
-				</Tooltip>
-			),
-			accessor: 'pending',
-			Cell: row => (
-				<CellPercentage
-					percentage={ row.original.pendingPercentage }
-					caption={ `${ formatNumber( row.value ) } / ${ formatNumber( row.original.cakupan ) }` }
-				/>
-			),
-			minWidth: 190,
-		},
+		//{
+			//Header: () => (
+				//<Tooltip content={ 'Jumlah TPS yang memiliki foto yang belum diproses' }>
+					//<div className={ thColNumericClass }>
+						//<Heading>{ 'Belum Terproses' }</Heading>
+						//<CellPercentage
+							//percentage={ total.pendingPercentage }
+							//caption={ `${ formatNumber( total.pending ) } / ${ formatNumber( total.cakupan ) }` }
+						///>
+					//</div>
+				//</Tooltip>
+			//),
+			//Footer: () => (
+				//<Tooltip content={ 'Jumlah TPS yang memiliki foto yang belum diproses' }>
+					//<div className={ thColNumericClass }>
+						//<Heading>{ 'Belum Terproses' }</Heading>
+						//<CellPercentage
+							//percentage={ total.pendingPercentage }
+							//caption={ `${ formatNumber( total.pending ) } / ${ formatNumber( total.cakupan ) }` }
+						///>
+					//</div>
+				//</Tooltip>
+			//),
+			//accessor: 'pending',
+			//Cell: row => (
+				//<CellPercentage
+					//percentage={ row.original.pendingPercentage }
+					//caption={ `${ formatNumber( row.value ) } / ${ formatNumber( row.original.cakupan ) }` }
+				///>
+			//),
+			//minWidth: 190,
+		//},
 
-		{
-			Header: () => (
-				<Tooltip content={ 'Jumlah TPS yang memiliki laporan yang belum ditindaklanjuti.' }>
-					<div className={ thColNumericClass }>
-						<Heading>{ 'Bermasalah' }</Heading>
-						<CellPercentage
-							percentage={ total.errorPercentage }
-							caption={ `${ formatNumber( total.error ) } / ${ formatNumber( total.cakupan ) }` }
-						/>
-					</div>
-				</Tooltip>
-			),
-			Footer: () => (
-				<Tooltip content={ 'Jumlah TPS yang memiliki laporan yang belum ditindaklanjuti.' }>
-					<div className={ thColNumericClass }>
-						<Heading>{ 'Bermasalah' }</Heading>
-						<CellPercentage
-							percentage={ total.errorPercentage }
-							caption={ `${ formatNumber( total.error ) } / ${ formatNumber( total.cakupan ) }` }
-						/>
-					</div>
-				</Tooltip>
-			),
-			accessor: 'error',
-			Cell: row => (
-				<CellPercentage
-					percentage={ row.original.errorPercentage }
-					caption={ `${ formatNumber( row.value ) } / ${ formatNumber( row.original.cakupan ) }` }
-				/>
-			),
-			minWidth: 160,
-		},
+		//{
+			//Header: () => (
+				//<Tooltip content={ 'Jumlah TPS yang memiliki laporan yang belum ditindaklanjuti.' }>
+					//<div className={ thColNumericClass }>
+						//<Heading>{ 'Bermasalah' }</Heading>
+						//<CellPercentage
+							//percentage={ total.errorPercentage }
+							//caption={ `${ formatNumber( total.error ) } / ${ formatNumber( total.cakupan ) }` }
+						///>
+					//</div>
+				//</Tooltip>
+			//),
+			//Footer: () => (
+				//<Tooltip content={ 'Jumlah TPS yang memiliki laporan yang belum ditindaklanjuti.' }>
+					//<div className={ thColNumericClass }>
+						//<Heading>{ 'Bermasalah' }</Heading>
+						//<CellPercentage
+							//percentage={ total.errorPercentage }
+							//caption={ `${ formatNumber( total.error ) } / ${ formatNumber( total.cakupan ) }` }
+						///>
+					//</div>
+				//</Tooltip>
+			//),
+			//accessor: 'error',
+			//Cell: row => (
+				//<CellPercentage
+					//percentage={ row.original.errorPercentage }
+					//caption={ `${ formatNumber( row.value ) } / ${ formatNumber( row.original.cakupan ) }` }
+				///>
+			//),
+			//minWidth: 160,
+		//},
 	]
 }
